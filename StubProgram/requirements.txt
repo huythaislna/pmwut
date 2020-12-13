@@ -1,0 +1,3 @@
+pycryptodome==3.9.9
+pyffx==0.3.0
+websockets==8.1

@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "SecurePWD",
+    "description": "It's created by Tides",
+    "version": "1.0",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "js": ["content.js"],
+        "matches": ["https://*/*"]
+      }],
+    "permissions": ["http://localhost/*"]
+}
