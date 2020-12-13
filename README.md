@@ -2,7 +2,7 @@
 
 
 ### PMWUT
-PMWUT generates many strong and random passwords from a memorable password by a USB Token
+PMWUT generates many strong and random passwords from a memorable password with a USB Token
 
 
 ### Usage:
