@@ -14,4 +14,4 @@ PMWUT generates many strong and random passwords from a memorable password with 
 
        python3 main.py
 
-4. In your type your unique password and **Enter** to get PMWUT password
+4. In your browser type your password and **Enter** to get PMWUT password
