@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "SecurePWD",
-    "description": "It's created by Tides",
+    "name": "Password Manager with USB token",
+    "description": "It's created by F2. Generating many strong and random passwords from a memorable password with a USB Token",
     "version": "1.0",
     "browser_action": {
         "default_popup": "popup.html"
