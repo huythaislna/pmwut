@@ -5,15 +5,7 @@ var ws = new WebSocket("ws://localhost:8765");
 
 
 //get password input
-let pass = document.getElementById("pass");
-passwordName = "pass,pwd,pw,passwd,password"
-inputs = document.querySelectorAll('input');
-for(let i = 0; i < inputs.length; i++) {
-    if (passwordName.indexOf(inputs[i].name) != -1) {
-        pass = inputs[i];
-        break;
-    }
-}
+let pass = document.querySelector('input[type="password"]')
 
 //isolate dom
 let myDiv = document.createElement("div");
@@ -21,6 +13,7 @@ pass.parentNode.insertBefore(myDiv, pass)
 let host = myDiv;
 let root = host.attachShadow({ mode: 'closed' });
 input = pass.cloneNode(true);
+input.setAttribute('placeholder', 'Master password')
 root.appendChild(input);
 pass.style.display = "none"
 
@@ -28,7 +21,7 @@ pass.style.display = "none"
 let url = new URL(window.location.href);
 let domain = url.hostname;
 input.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 113) {
         ws.send("DOMAIN--" + domain + "|PASSWORD--" + input.value);
     }
 })
