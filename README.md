@@ -13,3 +13,5 @@ PMWUT generates many strong and random passwords from a memorable password with 
 3. Run stub program.
 
        python3 main.py
+
+4. In your type your unique password and **Enter** to get PMWUT password
