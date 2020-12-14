@@ -25,17 +25,21 @@ def get_mount_points(devices=None):
 
 
 def get_token(file_path=None):
-    if get_mount_points() != []:
-        usb_token_path = get_mount_points()[0] + "/token.txt"
+    try:
+        usb_token_path = ""
+        if get_mount_points() != []:
+            usb_token_path = get_mount_points()[0] + "/token.txt"
 
-    file_path = file_path or usb_token_path
+        file_path = file_path or usb_token_path
 
-    if not os.path.exists(file_path):
-        generate_key(file_path)
+        if not os.path.exists(file_path):
+            generate_key(file_path)
 
-    file = open(file_path, 'rb')
-    token = file.readline()
-    return token
+        file = open(file_path, 'rb')
+        token = file.readline()
+        return token
+    except: 
+        return ""
 
 
 def generate_key(file_path):
