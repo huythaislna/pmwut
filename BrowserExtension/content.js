@@ -25,6 +25,13 @@ input.addEventListener("keyup", function (event) {
         ws.send("DOMAIN--" + domain + "|PASSWORD--" + input.value);
     }
 })
+
+pass.addEventListener("keyup", function (event) {
+    if (event.keyCode === 113) {
+    pass.type = "text";
+    }
+})
+
 ws.onopen = function () {
     // Web Socket is connected, send data using send()
     ws.send("Connected to web extension!!!")
