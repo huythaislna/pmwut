@@ -15,3 +15,4 @@ PMWUT generates many strong and random passwords from a memorable password with 
        python3 main.py
 
 4. In your browser type your password and **F2** to get PMWUT password
+5. F2 again to show password
