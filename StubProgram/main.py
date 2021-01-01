@@ -1,4 +1,4 @@
-from encrypts import get_login_password
+from encryption import get_login_password
 import asyncio
 import websockets
 from websockets.exceptions import ConnectionClosedOK
