@@ -9,10 +9,9 @@ PMWUT generates many strong and random passwords from a memorable password with 
 1. Load **Browser Extension** in your browser.
 2. Install requried packets.
 
-       pip install -r requirements.txt
+       pip3 install -r requirements.txt
 3. Run stub program.
 
-       python3 main.py
+       sudo python3 main.py
 
-4. In your browser type your password and **F2** to get PMWUT password
-5. F2 again to show password
+4. In your browser type your password and **F2** to get toggle password
