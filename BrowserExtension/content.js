@@ -28,7 +28,13 @@ input.addEventListener("keyup", function (event) {
 
 pass.addEventListener("keyup", function (event) {
     if (event.keyCode === 113) {
-    pass.type = "text";
+        if (pass.type == "password")
+            {
+                pass.type = "text";
+            }
+        else {
+            pass.type = "password";
+        }
     }
 })
 
