@@ -7,11 +7,11 @@ from subprocess import check_output, CalledProcessError
 
 class Encryption:
     def encrypt(key, value):
-        cipher = AES.new(Padding.pad(key,24), AES.MODE_ECB)
+        cipher = AES.new(Padding.pad(key,32), AES.MODE_ECB)
         return cipher.encrypt(Padding.pad(value,64))
 
     def decrypt(key, value):
-        cipher = AES.new(Padding.pad(key, 24), AES.MODE_ECB)
+        cipher = AES.new(Padding.pad(key, 32), AES.MODE_ECB)
         return Padding.unpad(cipher.decrypt(value), 64)
 
 
