@@ -2,6 +2,7 @@ from encryption import get_login_password
 import asyncio
 import websockets
 from websockets.exceptions import ConnectionClosedOK
+from utils import welcome
 
 
 async def handler(websocket, path):
@@ -19,6 +20,7 @@ async def handler(websocket, path):
 
 def start():
     try:
+        welcome()
         start_server = websockets.serve(handler, "127.0.0.1", 8765)
         asyncio.get_event_loop().run_until_complete(start_server)
         asyncio.get_event_loop().run_forever()
