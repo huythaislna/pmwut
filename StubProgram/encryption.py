@@ -11,14 +11,10 @@ from utils import Encryption
 
 
 alphabet = string.ascii_letters + string.digits + "!@#&$%^*"
-username = getpass.getuser()
-
 
 def get_login_password(domain, password):
     try:
         token = None
-        #token = get_token("token.txt") # use this line if don't have usb
-        #usb_token = None
         usb_token = get_token()
         token = usb_token or token
         print(token)
@@ -27,7 +23,7 @@ def get_login_password(domain, password):
             exit(1)
         hash_pwd = SHA256.new(data=password.encode()).hexdigest()
         password = password + hash_pwd
-        session_key = AES.new(token[12:], AES.MODE_ECB).encrypt(Padding.pad(domain.encode(), 128))
+        session_key = AES.new(token[12:], AES.MODE_ECB).encrypt(Padding.pad(domain.encode(), 64))
         cipher = pyffx.String(session_key, alphabet=alphabet, length=16)
         loginPassword = cipher.encrypt(password[:16])
         return loginPassword
