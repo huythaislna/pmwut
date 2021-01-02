@@ -14,10 +14,7 @@ alphabet = string.ascii_letters + string.digits + "!@#&$%^*"
 
 def get_login_password(domain, password):
     try:
-        token = None
-        usb_token = get_token()
-        token = usb_token or token
-        print(token)
+        token = get_token()
         if not valid_threshold(token):
             print("[-] Exceeds the secure threshold")
             exit(1)
